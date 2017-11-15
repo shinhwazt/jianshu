@@ -1,0 +1,41 @@
+1 创建文件夹vue-wx
+2 执行npm init创建package.json文件
+3 创建 src+dist文件 src用来存放源代码 dist用来存放编译过的代码
+4 创建.babelrc {"presets": ["es2015"]}
+5 创建webpack.config.js
+var webpack = require('webpack');
+var path = require('path');
+module.exports = {
+  entry: './js/index.js',
+  output: {
+    path: __dirname + "/dist",
+    filename: 'index.js',
+    publicPath:"dist/"
+  },
+  module: {
+    loaders: [{
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      },
+      {
+        test: path.join(__dirname, 'es6'),
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {　　　　　　
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=5000&name=images/[name].[ext]'　　　　
+      }
+    ],
+  },
+  resolve: {
+    alias: {
+      'vue': 'vue/dist/vue.js'
+    }
+  },
+
+}
