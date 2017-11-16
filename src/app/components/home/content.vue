@@ -1,5 +1,5 @@
 <template>
-<div class="main">
+<div class="home-main">
   <div class="home-articles">
     <v-topic></v-topic>
     <div class="article-wrapper">
@@ -46,7 +46,7 @@
 font-size: 29px;border-radius: 5px}
 .divider{margin:0 10px}
 .rotateX{display: block;transform: rotateX(180deg);font-size: 35px;height:100%;width:100%}
-.main{width:750px;position: fixed;top:90px;bottom: 90px;left: 0;overflow-y: auto}
+.home-main{width:750px;position: fixed;top:90px;bottom: 90px;left: 0;overflow-y: auto}
 .home-articles{width:750px;margin:0 auto;}
 .single-article{width:690px;margin:0 auto}
 .article-wrapper{width:750px;margin:0 auto}

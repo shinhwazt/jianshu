@@ -6,14 +6,17 @@ document.querySelector("head").appendChild(meta);
 
 import Vue from "vue"
 import vFooter from "./footer/index.vue"
-import homeHeader from "./components/home/header.vue"
-import homeContent from "./components/home/content.vue"
+import vHome from "./components/home/home.vue"
+import router from "./config/route.js"
+import VueRouter from "vue-router"
+Vue.use(VueRouter)
 
 new Vue({
   el:"#app",
   components:{
     vFooter:vFooter,
-    homeHeader:homeHeader,
-    homeContent:homeContent,
-  }
+    vHome:vHome,
+  },
+  router
+
 })

@@ -2,26 +2,36 @@
   <div class="footer">
     <ul>
       <li>
-        <span class="icon icon-home2"></span>
-        <span class="text">{{home}}</span>
+        <router-link to="/home">
+          <span class="icon icon-home2"></span>
+          <span class="text">{{home}}</span>
+        </router-link>
       </li>
       <li>
-        <span class="icon icon-compass2"></span>
-        <span class="text">{{explor}}</span>
+        <router-link to="/explor">
+          <span class="icon icon-compass2"></span>
+          <span class="text">{{explor}}</span>
+        </router-link>
       </li>
       <li>
-        <div class="middle">
-          <span class="icon-plus"></span>
-        </div>
+        <router-link to="/public">
+          <div class="middle">
+            <span class="icon-plus"></span>
+          </div>
+        </router-link>
 
       </li>
       <li>
-        <span class="icon icon-bubble2"></span>
-        <span class="text">{{message}}</span>
+        <router-link to="/message">
+          <span class="icon icon-bubble2"></span>
+          <span class="text">{{message}}</span>
+        </router-link>
       </li>
       <li>
-        <span class="icon icon-user"></span>
-        <span class="text">{{person}}</span>
+        <router-link to="/person">
+          <span class="icon icon-user"></span>
+          <span class="text">{{person}}</span>
+        </router-link>
       </li>
 
     </ul>
@@ -33,6 +43,9 @@ ul li{list-style:none}
 .footer{height:90px;width:750px;position:fixed;bottom:0;border-top:1px solid #ccc;background-color:white;left:50%;margin-left:-375px;display: -webkit-flex;display: flex;}
 .footer ul{height:90px;width:750px;display: -webkit-flex;display: flex;}
 ul > li{flex:1}
+
+ul > li a{display: inline-block;height: 100%;width: 100%;overflow: hidden;color: #929292}
+.router-link-active{color:#e6816f}
 .footer span{display: inline-block;}
 .footer .middle{height:90px;width:100%;text-align: center;overflow: hidden;}
 .footer .middle span{height:50px;width:50px;border-radius: 50%;background-color: red;color:white;margin-top:20px;line-height: 50px;text-align: center;font-size:25px}
