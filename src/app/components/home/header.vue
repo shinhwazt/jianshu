@@ -48,7 +48,12 @@ export default{
   },
   methods:{
     showSearchHandler:function(){
-      this.search == true?this.search = false:this.search = true;
+      if(this.search){
+        this.search = false
+      }else{
+      
+        this.search = true;
+      }
     }
   }
 }
