@@ -11,7 +11,10 @@
  </head>
  <body>
  <div id="app" class="main">
-   <router-view></router-view>
+   <keep-alive>
+     <router-view></router-view>
+   </keep-alive>
+
    <v-footer></v-footer>
 
  </div>

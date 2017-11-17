@@ -79,8 +79,12 @@ export default{
       currentArticle:0
     }
   },
-  mounted:function(){
+  created:function(){
+    console.log("created周期执行");
     this.articles = articles.articles;
+  },
+  mounted:function(){
+    console.log("mounted周期执行");
   },
   components:{
     vTopic:vTopic

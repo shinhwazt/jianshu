@@ -11,7 +11,8 @@ export default{
       time:"1510735353079",
       comment:"10",
       love:"111",
-
+      read:"906778",
+      category:"上班这点事"
     },
     {
       id:2,
@@ -23,6 +24,8 @@ export default{
       time:"1510735353079",
       comment:"10",
       love:"111",
+      read:"6789",
+      category:"故事",
       related:{
         avator:"http://upload.jianshu.io/users/upload_avatars/5100726/29161620-07f9-40ba-aed2-e1a2158f8bfd.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64",
         username:"暮紫向晨",
@@ -39,7 +42,8 @@ export default{
       time:"1510735353079",
       comment:"10",
       love:"111",
-
+      read:"6757",
+      category:"生活",
     },
     {
       id:4,
@@ -51,6 +55,8 @@ export default{
       time:"1510735353079",
       comment:"10",
       love:"111",
+      read:"232440",
+      category:"旅行",
       related:{
         username:"廖小小小赛",
         avator:"http://upload.jianshu.io/users/upload_avatars/3466315/1ab6c249-eb57-4f58-ba70-b534394956e5.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64",
@@ -67,6 +73,8 @@ export default{
       time:"1510735353079",
       comment:"10",
       love:"111",
+      read:"2340",
+      category:"闲扯淡",
       related:{
         avator:"http://upload.jianshu.io/users/upload_avatars/2263828/b9066323d570.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64",
         username:"不懂点心理",

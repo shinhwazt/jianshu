@@ -5,10 +5,14 @@
       <div class="home-heaader-function">
         <span class="icon-user-plus"></span>
       </div>
-      <div class="home-heaader-function">
+      <div class="home-heaader-function" @click="showSearchHandler">
         <span class="icon-search"></span>
       </div>
     </div>
+    <transition name="slide-fade">
+      <div class="home-search" v-show="search" @click="showSearchHandler"></div>
+    </transition>
+
   </div>
 </template>
 <style>
@@ -16,9 +20,36 @@
 .home-header-left{height:90px;width:100px;text-align: left;line-height: 90px;float: left;}
 .home-header-right{height:90px;width: 160px;float: right;}
 .home-heaader-function{height:90px;width:80px;float:left;text-align: center;line-height: 90px}
+
+.home-search{width:750px;background-color: red;position: fixed;top:0;left: 0;bottom: 90px;}
+.slide-fade-enter-active {
+  transition: all .5s ease;
+}
+.slide-fade-enter
+/* .slide-fade-leave-active for below version 2.1.8 */ {
+  transform: translateX(750px);
+
+}
+.slide-fade-leave-active {
+  transition: none;
+}
+.slide-fade-leave-to
+/* .slide-fade-leave-active for below version 2.1.8 */ {
+
+
+}
 </style>
 <script>
 export default{
-
+  data(){
+    return {
+      search:false,
+    }
+  },
+  methods:{
+    showSearchHandler:function(){
+      this.search == true?this.search = false:this.search = true;
+    }
+  }
 }
 </script>
