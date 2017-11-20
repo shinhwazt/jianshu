@@ -1,6 +1,6 @@
 <template>
   <div class="home-header">
-    <div class="home-header-left">首页</div>
+    <div class="home-header-left">首页{{author}}</div>
     <div class="home-header-right">
       <div class="home-heaader-function">
         <span class="icon-user-plus"></span>
@@ -51,9 +51,15 @@ export default{
       if(this.search){
         this.search = false
       }else{
-      
+
         this.search = true;
       }
+    },
+
+  },
+  computed:{
+    author(){
+      return this.$store.state.author;
     }
   }
 }

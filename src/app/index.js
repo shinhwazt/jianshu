@@ -9,6 +9,7 @@ import vFooter from "./footer/index.vue"
 import vHome from "./components/home/home.vue"
 import router from "./config/route.js"
 import VueRouter from "vue-router"
+import store from './store/'
 Vue.use(VueRouter)
 
 new Vue({
@@ -17,6 +18,7 @@ new Vue({
     vFooter:vFooter,
     vHome:vHome,
   },
-  router
+  router,
+  store
 
 })
