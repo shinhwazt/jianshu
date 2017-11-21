@@ -56,7 +56,7 @@
   </div>
 </template>
 <style>
-.explor-hot-acticle{width:750px;margin:0 auto;margin-bottom: 90px}
+.explor-hot-acticle{width:750px;margin:0 auto;margin-bottom: 90px;background-color: white}
 .hot-category-title{height:80px;width:690px;box-sizing: border-box;padding: 25px 0;margin:0 auto;overflow: hidden;}
 .hot-category-title-text{display: inline-block;float: left;height: 30px;font-size: 28px;line-height: 30px;
 width: 150px;box-sizing: border-box;border-left: 3px solid #e68c81;padding-left: 15px;color: #979797}

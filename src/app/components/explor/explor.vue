@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="explor-content">
     <explor-carousel></explor-carousel>
     <explor-content></explor-content>
     <explor-hot-topic></explor-hot-topic>
@@ -7,7 +7,7 @@
   </div>
 </template>
 <style>
-
+.explor-content{background-color: white}
 </style>
 <script>
 import explorCarousel from "./carousel.vue"

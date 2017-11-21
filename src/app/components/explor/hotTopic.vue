@@ -18,7 +18,7 @@
   </div>
 </template>
 <style>
-.explor-hot-topic{width:690px;height:260px;margin:0 auto;}
+.explor-hot-topic{width:690px;height:260px;margin:0 auto;background-color: white}
 .hot-topic-title{height:80px;width:690px;box-sizing: border-box;padding: 25px 0}
 .hot-topic-title-text{display: inline-block;float: left;height: 30px;font-size: 28px;line-height: 30px;
 width: 150px;box-sizing: border-box;border-left: 3px solid #e68c81;padding-left: 15px;color: #979797}
