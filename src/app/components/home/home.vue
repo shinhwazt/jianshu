@@ -1,6 +1,6 @@
 <template>
   <div>
-    <home-header :header-text="headText" :handler-url="handlerUrl"></home-header>
+    <home-header :header-text="headText" :handler-url="handlerUrl" :handlerImg="handlerImg"></home-header>
     <home-content></home-content>
   </div>
 
@@ -15,7 +15,8 @@ export default{
   data(){
     return {
       headText:"首页",
-      handlerUrl:"homeTest"
+      handlerUrl:"recommendFollow",
+      handlerImg:"../../images/header/home.png"
     }
   },
   components:{

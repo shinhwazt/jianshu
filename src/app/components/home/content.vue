@@ -81,6 +81,7 @@ export default{
   },
   created:function(){
     console.log("created周期执行");
+    this.scrollHandler();
     this.articles = articles.articles;
   },
   mounted:function(){
@@ -90,6 +91,14 @@ export default{
     vTopic:vTopic
   },
   methods:{
+    scrollHandler:function(){
+      var _this = this;
+      window.addEventListener("touchmove",function(){
+        if(_this.panelShow){
+          return _this.panelShow = false;
+        }
+      })
+    },
     removeSingleArticle:function(){
       var currentId = this.currentArticle;
       for(var i=0,il=this.articles.length;i<il;i++){

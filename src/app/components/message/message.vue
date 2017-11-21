@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <message-header :header-text="headText" :handler-url="handlerUrl"></message-header>
+    <message-header :header-text="headText" :handler-url="handlerUrl" :handlerImg="handlerImg"></message-header>
     <message-content></message-content>
   </div>
 </template>
@@ -12,7 +12,8 @@ export default{
   data(){
     return {
       headText:"消息",
-      handlerUrl:""
+      handlerUrl:"",
+      handlerImg:"../../images/header/notify.png"
 
     }
   },

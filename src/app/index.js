@@ -19,6 +19,12 @@ new Vue({
     vHome:vHome,
   },
   router,
-  store
+  store,
+  methods:{
+
+  },
+  created:function(){
+    
+  }
 
 })

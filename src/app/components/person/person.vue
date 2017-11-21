@@ -1,6 +1,6 @@
 <template>
   <div>
-    <person-header :header-text="headText" :handler-url="handlerUrl"></person-header>
+    <person-header :header-text="headText" :handler-url="handlerUrl" :handlerImg="handlerImg"></person-header>
     <person-content></person-content>
   </div>
 </template>
@@ -13,8 +13,8 @@ export default{
   data(){
     return {
       headText:"我的",
-      handlerUrl:""
-
+      handlerUrl:"",
+      handlerImg:"../../images/header/setting.png"
     }
   },
   components:{
