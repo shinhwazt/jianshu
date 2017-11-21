@@ -10,7 +10,7 @@
         </div>
       </router-link>
 
-      <router-link to="/homeSearch">
+      <router-link to="/search">
         <div class="home-heaader-function">
           <span class="header-search">
             <img src="../../../../images/header/search.png">

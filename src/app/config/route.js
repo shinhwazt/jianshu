@@ -1,14 +1,10 @@
 import VueRouter from "vue-router"
 import home from "../components/home/home.vue"
 import explor from "../components/explor/explor.vue"
-<<<<<<< Updated upstream
 import message from "../components/message/message.vue"
 import person from "../components/person/person.vue"
 import recommendFollow from "../components/recommendFollow/follow.vue"
-=======
-import homeSearch from "../components/home/search.vue"
-
->>>>>>> Stashed changes
+import search from "../components/common/search.vue"
 const routes = [{
     path: "/home",
     component: home
@@ -22,17 +18,16 @@ const routes = [{
     component: explor
   },
   {
-<<<<<<< Updated upstream
     path: '/message',
     component: message
   },
   {
     path: '/person',
     component: person
-=======
-    path: '/home-search',
-    component: homeSearch
->>>>>>> Stashed changes
+  },
+  {
+    path: '/search',
+    component: search
   },
   {
     path: '/',
