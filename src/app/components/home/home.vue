@@ -11,6 +11,7 @@
 <script>
 import homeHeader from "../common/header.vue"
 import homeContent from "./content.vue"
+import { mapMutations } from 'vuex'
 export default{
   data(){
     return {
@@ -23,6 +24,22 @@ export default{
     homeHeader:homeHeader,
     homeContent:homeContent
   },
+  beforeRouteLeave :function(to,from,next){
+    var top = document.querySelector(".home-main").scrollTop;
+    this.RECORD_SCROLL({name:"home",height:top});
+    next();
+  },
+  mounted:function(){
+    document.querySelector(".home-main").scrollTop = this.scroll;
+  },
+  methods:{
+    ...mapMutations(["RECORD_SCROLL"]),
+  },
+  computed:{
+    scroll(){
+      return this.$store.state.homeScroll
+    }
+  }
 
 
 }

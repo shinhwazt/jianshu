@@ -42,6 +42,34 @@ export default{
       this.$router.go(-1);
     }
 
-  }
+  },
+  beforeCreate:function(){
+    console.log("life-cycle-beforeCreate-run");
+    console.log(document.querySelector(".feature-search"));
+  },
+  created:function(){
+    console.log("life-cycle-created-run");
+    console.log(document.querySelector(".feature-search"));
+  },
+  beforeMount:function(){
+    console.log("life-cycle-beforeMount-run");
+    console.log(document.querySelector(".feature-search"));
+  },
+  mounted:function(){
+    console.log("life-cycle-mounted-run");
+    console.log(document.querySelector(".feature-search"));
+  },
+  beforeUpdate:function(){
+    console.log("life-cycle-beforeUpdate-run");
+  },
+  updated:function(){
+    console.log("life-cycle-updated-run");
+  },
+  beforeDestroy:function(){
+    console.log("life-cycle-beforeDestroy-run");
+  },
+  destroyed:function(){
+    console.log("life-cycle-destroyed-run");
+  },
 }
 </script>
