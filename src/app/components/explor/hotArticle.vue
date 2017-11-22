@@ -43,7 +43,7 @@
 
             <div class="hot-article-tags">
               <span class="tags-category">{{hotArticle.category}}</span>
-              <span class="tags-count">{{hotArticle.read}}阅读·{{hotArticle.comment}}评论·{{hotArticle.love}}喜欢</span>
+              <span class="hot-article-tags-count">{{hotArticle.read}}阅读·{{hotArticle.comment}}评论·{{hotArticle.love}}喜欢</span>
             </div>
           </div>
         </li>
@@ -87,7 +87,7 @@ width: 150px;box-sizing: border-box;border-left: 3px solid #e68c81;padding-left:
 }
 .hot-article-tags{height:45px;width:690px;margin-top: 10px}
 .tags-category{box-sizing: border-box;height: 45px;display: inline-block;line-height: 45px;color: #e68c81;border: 1px solid #e68c81;padding:0 10px;float: left;font-size: 25px;border-radius: 5px}
-.tags-count{height: 45px;display: inline-block;line-height: 45px;font-size: 20px;margin-left: 20px;color: #8f8f8f}
+.hot-article-tags-count{height: 45px;display: inline-block;line-height: 45px;font-size: 20px;margin-left: 20px;color: #8f8f8f}
 
 .handlerPanel{height:70px;width:200px;text-align: center;line-height: 70px;box-shadow: 1px 1px 15px 1px #ccc;position: fixed;top:300px;left:300px;background-color: white;z-index: 15;
 font-size: 29px;border-radius: 5px}

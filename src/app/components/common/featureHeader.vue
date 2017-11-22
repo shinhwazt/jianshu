@@ -1,5 +1,5 @@
 <template>
-  
+
     <div class="feature-header">
       <div class="feature-back" @click="backHandler">
         <img src="../../../../images/header/back.png">
@@ -8,7 +8,7 @@
         {{featureText}}
       </div>
     </div>
-  
+
 
 </template>
 <style>
@@ -16,7 +16,7 @@
 border-bottom: 1px solid #ccc;color: #2c2c2c;font-weight: 600}
 .feature-back{height: 90px;width: 110px;float: left;box-sizing: border-box;padding:28px 38px 28px 38px}
 .feature-back img{height: 34px;width: 34px}
-.feature-text{height: 90px;width: 640px;line-height: 90px;text-align: left;font-size: 30px}
+.feature-text{height: 90px;width: 640px;line-height: 90px;text-align: left;font-size: 30px;float: left;}
 
 </style>
 <script>
