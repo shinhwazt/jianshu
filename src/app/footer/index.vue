@@ -49,8 +49,8 @@ ul > li a{display: inline-block;height: 100%;width: 100%;overflow: hidden;color:
 .footer span{display: inline-block;}
 .footer .middle{height:90px;width:100%;text-align: center;overflow: hidden;}
 .footer .middle span{height:50px;width:50px;border-radius: 50%;background-color: red;color:white;margin-top:20px;line-height: 50px;text-align: center;font-size:25px}
-.footer .icon{height:60px;width:100%;text-align: center;line-height: 80px;font-size: 35px;}
-.footer .text{height:30px;width:100%;text-align: center;line-height: 30px;font-size: 16px;}
+.footer .icon{height:60px;width:100%;text-align: center;line-height: 80px;font-size: 35px;float: left}
+.footer .text{height:30px;width:100%;text-align: center;line-height: 30px;font-size: 16px;float: left}
 
 
 </style>

@@ -45,10 +45,12 @@
 						<div class="recommend-follow-author-intro">
 							<span class="recommend-follow-author-intro-text">奥卡福话唠位哦啊是佛您是否就开房记录时间佛网IE合同位规划开始的离开房间爱上 </span>
 						</div>
-						<div class="recommend-follow-author-digest">
-							<span class="recommend-follow-author-digest-text">奥卡福话唠位哦啊是佛您是否就开房记录时间佛网IE合同位规划开始的离开房间爱上 </span>
+						<div class="recommend-follow-author-acticles">
+							<span class="recommend-follow-author-acticle">你看到的我是走过很多风景之后的我你看到的我是走过很多风景之后的我你看到的我是走过很多风景之后的我 </span>
+							<span class="recommend-follow-author-acticle">简书电视剧周刊20171109|测试 </span>
 						</div>
 					</li>
+
 					<li>
 						<div class="recommend-follow-author-related">我是大帅哥 关注了作者</div>
 						<div class="recommend-follow-author-description">
@@ -61,10 +63,12 @@
 						<div class="recommend-follow-author-intro">
 							<span class="recommend-follow-author-intro-text">奥卡福话唠位哦啊是佛您是否就开房记录时间佛网IE合同位规划开始的离开房间爱上 </span>
 						</div>
-						<div class="recommend-follow-author-digest">
-							<span class="recommend-follow-author-digest-text">奥卡福话唠位哦啊是佛您是否就开房记录时间佛网IE合同位规划开始的离开房间爱上 </span>
+						<div class="recommend-follow-author-acticles">
+							<span class="recommend-follow-author-acticle">你看到的我是走过很多风景之后的我你看到的我是走过很多风景之后的我你看到的我是走过很多风景之后的我 </span>
+							<span class="recommend-follow-author-acticle">简书电视剧周刊20171109|测试 </span>
 						</div>
 					</li>
+
 					<li>
 						<div class="recommend-follow-author-related">我是大帅哥 关注了作者</div>
 						<div class="recommend-follow-author-description">
@@ -77,10 +81,12 @@
 						<div class="recommend-follow-author-intro">
 							<span class="recommend-follow-author-intro-text">奥卡福话唠位哦啊是佛您是否就开房记录时间佛网IE合同位规划开始的离开房间爱上 </span>
 						</div>
-						<div class="recommend-follow-author-digest">
-							<span class="recommend-follow-author-digest-text">奥卡福话唠位哦啊是佛您是否就开房记录时间佛网IE合同位规划开始的离开房间爱上 </span>
+						<div class="recommend-follow-author-acticles">
+							<span class="recommend-follow-author-acticle">你看到的我是走过很多风景之后的我你看到的我是走过很多风景之后的我你看到的我是走过很多风景之后的我 </span>
+							<span class="recommend-follow-author-acticle">简书电视剧周刊20171109|测试 </span>
 						</div>
 					</li>
+
 				</ul>
 			</div>
 		</div>
@@ -122,9 +128,12 @@ border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;background-color: white
 .recommend-follow-author-follow{height: 60px;width: 140px;text-align: center;line-height: 60px;background-color: #48bd38;color: white;margin-top: 10px;display: inline-block;float: right;
 border-radius: 5px;}
 .recommend-follow-author-intro{height: auto;width: 690px;margin: 0 auto;box-sizing: border-box;padding-left:100px;padding-top: 55px;font-size: 30px;color: #8c8c8c;line-height: 50px}
-.recommend-follow-author-digest{height: auto;width: 690px;margin: 0 auto;box-sizing: border-box;padding-left:100px;font-size: 30px;color: #8c8c8c;line-height: 60px;padding-bottom: 20px}
-.recommend-follow-author-intro-text{display: inline-block;height: 100%;width: 100%;border-bottom: 1px solid #ccc;box-sizing: border-box;padding-bottom: 20px}
-
+.recommend-follow-author-acticles{height: auto;width: 690px;margin: 0 auto;box-sizing: border-box;padding-left:100px;font-size: 27px;color: #8c8c8c;padding-bottom: 20px}
+.recommend-follow-author-intro-text{display: inline-block;height: 100%;width: 100%;border-bottom: 1px solid #ccc;box-sizing: border-box;padding-bottom: 20px;font-size: 27px}
+.recommend-follow-author-acticle{height: 40px;width: 100%;box-sizing: border-box;padding-left: 30px;display: block;line-height: 40px;text-align: left;margin-top: 15px;
+background-image: url(../../../../images/follow/article.png);background-repeat: no-repeat;background-position-y:center;    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;}
 
 
 
