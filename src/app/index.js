@@ -4,6 +4,15 @@ meta.setAttribute("name", "viewport");
 meta.setAttribute("content", "width=750, initial-scale = " + phoneScale + ", maximum-scale = " + phoneScale + ", maximum-scale =" + phoneScale)
 document.querySelector("head").appendChild(meta);
 
+window.onresize = function(){
+  var meta = document.querySelector("meta[name='viewport']");
+  if(meta){
+    var phoneScale = parseInt(window.screen.width) / 750;
+    var content ="width=750, initial-scale = " + phoneScale + ", maximum-scale = " + phoneScale + ", maximum-scale =" + phoneScale;
+    meta.setAttribute("content",content);
+  }
+}
+
 import Vue from "vue"
 import vFooter from "./footer/index.vue"
 import vHome from "./components/home/home.vue"
@@ -24,7 +33,7 @@ new Vue({
 
   },
   created:function(){
-    
+
   }
 
 })

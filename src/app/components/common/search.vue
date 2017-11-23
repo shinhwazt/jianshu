@@ -14,7 +14,7 @@
     </transition>
 </template>
 <style>
-.feature-search{width:750px;background-color: white;position: fixed;top:0;left: 0;bottom: 0;z-index: 20}
+.feature-search{width:750px;background-color: white;position: fixed;top:0;left: 50%;margin-left: -375px;bottom: 0;z-index: 20}
 .feature-back{height: 90px;width: 110px;float: left;box-sizing: border-box;padding:28px 38px 28px 38px;float: left}
 .feature-back img{height: 34px;width: 34px}
 
@@ -35,6 +35,7 @@
 
 </style>
 <script>
+import xhr from "axios"
 export default{
 
   methods:{
@@ -43,33 +44,14 @@ export default{
     }
 
   },
-  beforeCreate:function(){
-    console.log("life-cycle-beforeCreate-run");
-    console.log(document.querySelector(".feature-search"));
-  },
-  created:function(){
-    console.log("life-cycle-created-run");
-    console.log(document.querySelector(".feature-search"));
-  },
-  beforeMount:function(){
-    console.log("life-cycle-beforeMount-run");
-    console.log(document.querySelector(".feature-search"));
-  },
   mounted:function(){
-    console.log("life-cycle-mounted-run");
-    console.log(document.querySelector(".feature-search"));
+    console.log("xhr next")
+    xhr.get("http://webapi.efftravel.com/api/service/getproductlist?second_value=392").then(function(data){
+
+    },function(){
+
+    })
   },
-  beforeUpdate:function(){
-    console.log("life-cycle-beforeUpdate-run");
-  },
-  updated:function(){
-    console.log("life-cycle-updated-run");
-  },
-  beforeDestroy:function(){
-    console.log("life-cycle-beforeDestroy-run");
-  },
-  destroyed:function(){
-    console.log("life-cycle-destroyed-run");
-  },
+
 }
 </script>

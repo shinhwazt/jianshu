@@ -14,11 +14,7 @@ module.exports = {
         loader: ExtractTextPlugin.extract("style-loader","css-loader")
 
       },
-      {
-        test: path.join(__dirname, 'es6'),
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      },
+
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -33,7 +29,12 @@ module.exports = {
       {　　　　　　
         test: /\.(png|jpg)$/,
         loader: 'url-loader?limit=5000&name=images/[name].[ext]'　　　　
-      }
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
     ],
   },
   resolve: {

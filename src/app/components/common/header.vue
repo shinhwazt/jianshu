@@ -24,7 +24,7 @@
   </div>
 </template>
 <style>
-.home-header{height:90px;width:750px;box-sizing: border-box;padding:0 30px;font-size: 35px;position: fixed;top:0;left:0;background-color: white;z-index: 10;
+.home-header{height:90px;width:750px;box-sizing: border-box;padding:0 30px;font-size: 35px;position: fixed;top:0;left:50%;margin-left: -375px;background-color: white;z-index: 10;
 border-bottom: 1px solid #ccc;color: #2c2c2c;font-weight: 600}
 .home-header-left{height:90px;width:100px;text-align: left;line-height: 90px;float: left;}
 .home-header-right{height:90px;width: 160px;float: right;}
@@ -38,6 +38,6 @@ border-bottom: 1px solid #ccc;color: #2c2c2c;font-weight: 600}
 export default{
 
   props:["headerText","handlerImg","handlerUrl"],
-  
+
 }
 </script>

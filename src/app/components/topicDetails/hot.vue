@@ -102,7 +102,7 @@
 </template>
 <script></script>
 <style>
-.new-hot-content{width: 750px;position: fixed;top: 180px;left: 0;bottom: 0;overflow-y: auto;}
+.new-hot-content{width: 750px;position: fixed;margin-left: -375px;left: 50%;bottom: 0;top:180px;overflow-y: auto;}
 .new-hot-content ul{height: auto;width: 750px}
 .new-hot-content li{height: 220px;width: 750px;border-bottom: 1px solid #ccc;box-sizing: border-box;padding: 30px 0}
 .hot-details{width:690px;margin:0 auto}

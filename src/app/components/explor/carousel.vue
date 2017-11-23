@@ -14,7 +14,7 @@
   </div>
 </template>
 <style>
-.explor-carousel{height:320px;width:750px;overflow: hidden;position: relative;}
+.explor-carousel{height:320px;width:750px;overflow: hidden;position: relative;margin:0 auto}
 .carousel-wrapper{height:320px;white-space: nowrap;position: relative;top:0;left:0;font-size: 0;transform:translate(-750px)}
 .carousel-wrapper li{display: inline-block;letter-spacing: normal;word-spacing: normal;*display: inline;zoom:1;height:320px;width:750px;overflow: hidden;}
 .carousel-wrapper li img{height:320px;width:750px}

@@ -12,7 +12,7 @@
 
 </template>
 <style>
-.feature-header{height:90px;width:750px;box-sizing: border-box;font-size: 35px;position: fixed;top:0;left:0;background-color: white;z-index: 10;
+.feature-header{height:90px;width:750px;box-sizing: border-box;font-size: 35px;position: fixed;top:0;left:50%;margin-left: -375px;background-color: white;z-index: 10;
 border-bottom: 1px solid #ccc;color: #2c2c2c;font-weight: 600}
 .feature-back{height: 90px;width: 110px;float: left;box-sizing: border-box;padding:28px 38px 28px 38px}
 .feature-back img{height: 34px;width: 34px}

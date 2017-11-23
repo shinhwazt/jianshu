@@ -107,7 +107,7 @@ export default{
 }
 </script>
 <style>
-.recommendFollow{width: 750px;position: fixed;top: 0;left: 0;bottom: 0;z-index: 20;background-color: #f6f6f6;overflow-y: auto;}
+.recommendFollow{width: 750px;position: fixed;top: 0;left: 50%;margin-left: -375px;bottom: 0;z-index: 20;background-color: #f6f6f6;overflow-y: auto;overflow-x:hidden;}
 .recommend-follow-search{height: 96px;width: 750px;text-align: center;margin-top: 90px;background-color: white}
 .recommend-follow-search input{height: 73px;width: 690px;display: inline-block;margin-top: 10px;border: 1px solid #ccc;outline: none;
 border-radius: 36px;font-size: 30px;box-sizing: border-box;padding-left: 15px;text-align: center;line-height: 73px}

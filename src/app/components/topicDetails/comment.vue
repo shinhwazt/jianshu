@@ -109,7 +109,7 @@ export default{
 }
 </script>
 <style>
-.new-comment-content{width: 750px;position: fixed;top: 180px;left: 0;bottom: 0;overflow-y: auto;}
+.new-comment-content{width: 750px;position: fixed;margin-left: -375px;left: 50%;bottom: 0;top:180px;overflow-y: auto;}
 .new-comment-content ul{height: auto;width: 750px}
 .new-comment-content li{height: 220px;width: 750px;border-bottom: 1px solid #ccc;box-sizing: border-box;padding: 30px 0}
 .conmment-details{width:690px;margin:0 auto}
