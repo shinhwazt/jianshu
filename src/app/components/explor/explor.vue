@@ -14,6 +14,7 @@ import explorCarousel from "./carousel.vue"
 import explorContent from "./content.vue"
 import explorHotTopic from "./hotTopic.vue"
 import explorHotArticle from "./hotArticle.vue"
+import { mapMutations } from 'vuex'
 
 export default{
   components:{
@@ -22,8 +23,23 @@ export default{
     explorHotTopic:explorHotTopic,
     explorHotArticle:explorHotArticle
   },
+
+
+  beforeRouteLeave :function(to,from,next){
+    var top = document.body.scrollTop;
+    this.RECORD_SCROLL({name:"explor",height:top});
+    next();
+  },
   mounted:function(){
-    console.log("explor mounted run");
+    document.body.scrollTop = this.scroll;
+  },
+  methods:{
+    ...mapMutations(["RECORD_SCROLL"]),
+  },
+  computed:{
+    scroll(){
+      return this.$store.state.explorScroll
+    }
   }
 }
 </script>

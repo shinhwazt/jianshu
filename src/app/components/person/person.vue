@@ -9,12 +9,30 @@
 <script>
 import personContent from "./content.vue"
 import personHeader from "../common/header.vue"
+import { mapMutations } from 'vuex'
+
 export default{
   data(){
     return {
       headText:"我的",
       handlerUrl:"",
       handlerImg:"../../images/header/setting.png"
+    }
+  },
+  beforeRouteLeave :function(to,from,next){
+    var top = document.body.scrollTop;
+    this.RECORD_SCROLL({name:"person",height:top});
+    next();
+  },
+  mounted:function(){
+    document.body.scrollTop = this.scroll;
+  },
+  methods:{
+    ...mapMutations(["RECORD_SCROLL"]),
+  },
+  computed:{
+    scroll(){
+      return this.$store.state.personScroll
     }
   },
   components:{
