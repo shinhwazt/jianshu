@@ -1,5 +1,5 @@
 <template>
-  <div class="home-header">
+  <div class="home-header" @click="test">
     <div class="home-header-left">{{headerText}}</div>
     <div class="home-header-right">
       <router-link :to="'/'+handlerUrl">
@@ -38,6 +38,11 @@ border-bottom: 1px solid #ccc;color: #2c2c2c;font-weight: 600}
 export default{
 
   props:["headerText","handlerImg","handlerUrl"],
+  methods:{
+    test:function(){
+      this.$emit('fafn');
+    }
+  }
 
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <home-header :header-text="headText" :handler-url="handlerUrl" :handlerImg="handlerImg"></home-header>
+    <home-header :header-text="headText" :handler-url="handlerUrl" :handlerImg="handlerImg" @fafn="fafn"></home-header>
     <home-content></home-content>
   </div>
 
@@ -34,6 +34,10 @@ export default{
   },
   methods:{
     ...mapMutations(["RECORD_SCROLL"]),
+    fafn:function(){
+      console.log(1);
+      this.headText = "子组件";
+    }
   },
   computed:{
     scroll(){
