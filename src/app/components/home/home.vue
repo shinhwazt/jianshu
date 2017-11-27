@@ -1,9 +1,8 @@
 <template>
   <div>
-    <home-header :header-text="headText" :handler-url="handlerUrl" :handlerImg="handlerImg" @fafn="fafn"></home-header>
+    <homeHeader :headerText="headText" :handlerUrl="handlerUrl" :handlerImg="handlerImg" @fafn="handler"></homeHeader>
     <home-content></home-content>
   </div>
-
 </template>
 <style>
 #app{background-color: #f6f6f6}
@@ -34,9 +33,9 @@ export default{
   },
   methods:{
     ...mapMutations(["RECORD_SCROLL"]),
-    fafn:function(){
+    handler:function(){
       console.log(1);
-      this.headText = "子组件";
+      this.headText = "组件";
     }
   },
   computed:{

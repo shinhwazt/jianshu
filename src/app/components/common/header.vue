@@ -9,7 +9,6 @@
           </span>
         </div>
       </router-link>
-
       <router-link to="/search">
         <div class="home-heaader-function">
           <span class="header-search">
@@ -17,10 +16,7 @@
           </span>
         </div>
       </router-link>
-
     </div>
-
-
   </div>
 </template>
 <style>
@@ -32,17 +28,14 @@ border-bottom: 1px solid #ccc;color: #2c2c2c;font-weight: 600}
 .header-search,.header-feature{height: 43px;width: auto;display: inline-block;margin-top: 23px}
 .header-search img,.header-feature img{height: 43px;width: 100%}
 .home-search{width:750px;background-color: red;position: fixed;top:0;left: 0;bottom: 90px;}
-
 </style>
 <script>
 export default{
-
   props:["headerText","handlerImg","handlerUrl"],
   methods:{
     test:function(){
       this.$emit('fafn');
     }
   }
-
 }
 </script>
