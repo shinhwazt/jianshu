@@ -7,7 +7,7 @@
 在vue2中实例共有8个生命周期分别为：
 
 
-beforeCreate,created,beforeMount,mounted,beforeUpdate,updated,beforeDestroy,destroyed
+beforeCreate,created,beforeMount,mounted(该生命周期中可以使用操作dom),beforeUpdate,updated,beforeDestroy,destroyed
 
 
 组件加载时的执行顺序为：beforeCreate->created->beforeMount->mounted
