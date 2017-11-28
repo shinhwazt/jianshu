@@ -79,13 +79,25 @@ export default{
       currentArticle:0
     }
   },
+  beforeCreate:function(){
+    console.log("beforeMount周期执行");
+  },
   created:function(){
     console.log("created周期执行");
     this.scrollHandler();
     this.articles = articles.articles;
   },
+  beforeMount:function(){
+    console.log("beforeMount周期执行");
+  },
   mounted:function(){
     console.log("mounted周期执行");
+  },
+  beforeUpdate:function(){
+    console.log("beforeUpdate周期执行");
+  },
+  updated:function(){
+    console.log("updated周期执行");
   },
   components:{
     vTopic:vTopic

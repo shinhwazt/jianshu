@@ -20,15 +20,26 @@ export default{
     }
   },
   components:{
+    homeContent:homeContent,
     homeHeader:homeHeader,
-    homeContent:homeContent
+
   },
   beforeRouteLeave :function(to,from,next){
     var top = document.querySelector(".home-main").scrollTop;
     this.RECORD_SCROLL({name:"home",height:top});
     next();
   },
+  beforeCreate:function(){
+    console.log("parent beforeCreate run");
+  },
+  created:function(){
+    console.log("parent created run");
+  },
+  beforeMount:function(){
+    console.log("parent beforeMount run");
+  },
   mounted:function(){
+    console.log("parent mounted run");
     document.querySelector(".home-main").scrollTop = this.scroll;
   },
   methods:{

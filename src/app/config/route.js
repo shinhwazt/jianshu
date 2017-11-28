@@ -30,7 +30,7 @@ const routes = [{
     component: recommendFollow
   },
   {
-    path: '/topicDetails',
+    path: '/topicDetails/:id',
     component: topicDetails,
     children: [
         {

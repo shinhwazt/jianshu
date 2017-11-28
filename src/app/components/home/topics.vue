@@ -3,7 +3,7 @@
     <div class="home-topics">
       <ul>
         <li v-for="topic in topics">
-          <router-link to="/topicDetails">
+          <router-link to="/topicDetails/111">
             <img :src="topic">
             <span class="topic-icon"></span>
           </router-link>

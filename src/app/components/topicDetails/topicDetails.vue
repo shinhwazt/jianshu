@@ -67,6 +67,7 @@ export default{
     }
   },
   mounted:function(){
+    console.log(this.$route.params.id)
     window.addEventListener("popstate",function(e){
       var hash = window.location.hash;
       var topicDetailsReg = /^#\/topicDetails/;
@@ -74,14 +75,16 @@ export default{
         window.location.hash = "#/home";
       }
     });
-    var hash = window.location.hash.slice(1);
-    this.scrollActiveLine(hash);
+    var hash = window.location.hash.slice(1).split("/");
+    var final = hash[hash.length-1];
+    this.scrollActiveLine(final);
   },
 
   beforeRouteUpdate:function(to,from,next){
 
-    var hash = to.path;
-    this.scrollActiveLine(hash);
+    var hash = to.path.split("/");
+    var final = hash[hash.length-1];
+    this.scrollActiveLine(final);
 
     next();
   },
@@ -93,13 +96,13 @@ export default{
       var dom = this.$refs.activeLine;
 
       switch(hash){
-        case "/topicDetails/public":
+        case "public":
         dom.style.left = 0;
         break;
-        case "/topicDetails/comment":
+        case "comment":
         dom.style.left = (33.3/100)*750+"px";
         break;
-        case "/topicDetails/hot":
+        case "hot":
         dom.style.left = (66.6/100)*750+"px";
         break;
 

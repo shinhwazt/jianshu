@@ -102,10 +102,7 @@
 </template>
 <script>
 export default{
-  mounted:function(){
-    var dom = this.$refs.activeLine;
-    console.log(dom);
-  }
+
 }
 </script>
 <style>

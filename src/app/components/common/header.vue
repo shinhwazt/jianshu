@@ -36,6 +36,30 @@ export default{
     test:function(){
       this.$emit('parentfn');
     }
-  }
+  },
+  beforeCreate:function(){
+    console.log("lifecycle:beforeCreated");
+  },
+  created:function(){
+    console.log("lifecycle:created");
+  },
+  beforeMount:function(){
+    console.log("lifecycle:beforeMounted");
+  },
+  mounted:function(){
+    console.log("lifecycle:mounted");
+  },
+  beforeUpdate:function(){
+    console.log("lifecycle:beforeUpdate");
+  },
+  updated:function(){
+    console.log("lifecycle:updated");
+  },
+  beforeDestroy:function(){
+    console.log("lifecycle:beforeDestroy");
+  },
+  destroyed:function(){
+    console.log("lifecycle:destroy");
+  },
 }
 </script>
