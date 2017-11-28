@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <message-header :header-text="headText" :handler-url="handlerUrl" :handlerImg="handlerImg"></message-header>
+    <message-header :headerText="headText" :headerUrl="handlerUrl" :headerImg="handlerImg"></message-header>
     <message-content></message-content>
   </div>
 </template>

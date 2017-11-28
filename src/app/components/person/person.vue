@@ -1,6 +1,6 @@
 <template>
   <div>
-    <person-header :header-text="headText" :handler-url="handlerUrl" :handlerImg="handlerImg"></person-header>
+    <person-header :headerText="headText" :headerUrl="handlerUrl" :headerImg="handlerImg"></person-header>
     <person-content></person-content>
   </div>
 </template>

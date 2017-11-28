@@ -1,6 +1,6 @@
 <template>
   <div>
-    <homeHeader :headerText="headText" :handlerUrl="handlerUrl" :handlerImg="handlerImg" @parentfn="handler"></homeHeader>
+    <homeHeader :headerText="headText" :headerUrl="handlerUrl" :headerImg="handlerImg" @parentfn="handler"></homeHeader>
     <home-content></home-content>
   </div>
 </template>
