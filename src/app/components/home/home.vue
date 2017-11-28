@@ -1,6 +1,6 @@
 <template>
   <div>
-    <homeHeader :headerText="headText" :handlerUrl="handlerUrl" :handlerImg="handlerImg" @fafn="handler"></homeHeader>
+    <homeHeader :headerText="headText" :handlerUrl="handlerUrl" :handlerImg="handlerImg" @parentfn="handler"></homeHeader>
     <home-content></home-content>
   </div>
 </template>
@@ -34,8 +34,7 @@ export default{
   methods:{
     ...mapMutations(["RECORD_SCROLL"]),
     handler:function(){
-      console.log(1);
-      this.headText = "组件";
+      console.log("子组件通知父组件");
     }
   },
   computed:{

@@ -2,10 +2,10 @@
   <div class="home-header" @click="test">
     <div class="home-header-left">{{headerText}}</div>
     <div class="home-header-right">
-      <router-link :to="'/'+handlerUrl">
+      <router-link :to="'/'+headerUrl">
         <div class="home-heaader-function">
           <span class="header-feature">
-            <img :src="handlerImg">
+            <img :src="headerImg">
           </span>
         </div>
       </router-link>
@@ -31,10 +31,10 @@ border-bottom: 1px solid #ccc;color: #2c2c2c;font-weight: 600}
 </style>
 <script>
 export default{
-  props:["headerText","handlerImg","handlerUrl"],
+  props:["headerText","headerImg","headerUrl"],
   methods:{
     test:function(){
-      this.$emit('fafn');
+      this.$emit('parentfn');
     }
   }
 }
