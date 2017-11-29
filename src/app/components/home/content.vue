@@ -70,7 +70,7 @@ font-size: 29px;border-radius: 5px}
 </style>
 <script>
 import vTopic from "./topics.vue"
-import articles from "../../../../mock/articles.js"
+import axios from "axios"
 export default{
   data(){
     return {
@@ -84,8 +84,14 @@ export default{
   },
   created:function(){
     console.log("created周期执行");
-    this.scrollHandler();
-    this.articles = articles.articles;
+    var _this = this;
+    _this.scrollHandler();
+    axios.get("http://localhost:8888/articles").then(function(data){
+      _this.articles = data.data;
+      
+    },function(){
+
+    });
   },
   beforeMount:function(){
     console.log("beforeMount周期执行");

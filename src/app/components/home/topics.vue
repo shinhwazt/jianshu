@@ -25,15 +25,21 @@
 right: 0;border-radius: 50%}
 </style>
 <script>
-import topicData from "../../../../mock/topics.js"
+import axios from "axios"
 export default{
   data(){
     return {
       topics:[]
     }
   },
-  mounted:function(){
-    this.topics = topicData.authors
+  created:function(){
+    var _this = this;
+    axios.get("http://localhost:8888/topic").then(function(data){
+      _this.topics = data.data;
+    },function(){
+
+    });
   }
+
 }
 </script>

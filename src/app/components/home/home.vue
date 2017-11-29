@@ -40,7 +40,10 @@ export default{
   },
   mounted:function(){
     console.log("parent mounted run");
-    document.querySelector(".home-main").scrollTop = this.scroll;
+    this.$nextTick(function(){
+      document.querySelector(".home-main").scrollTop = this.scroll;
+    })
+
   },
   methods:{
     ...mapMutations(["RECORD_SCROLL"]),

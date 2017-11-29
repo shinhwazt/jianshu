@@ -1,6 +1,6 @@
 
 module.exports = {
-  authors:[
+  topics:[
     "http://upload.jianshu.io/collections/images/61/0__15815600_401_00.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64",
     "http://upload-images.jianshu.io/upload_images/3335960-a1e354c234b298cb.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/150/h/120",
     "http://upload.jianshu.io/collections/images/13/%E5%95%8A.png?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64",
