@@ -1,7 +1,7 @@
 <template>
   <div>
     <homeHeader :headerText="headText" :headerUrl="handlerUrl" :headerImg="handlerImg" @parentfn="handler"></homeHeader>
-    <home-content></home-content>
+    <home-content @resetScrollBar="resetScrollBar"></home-content>
   </div>
 </template>
 <style>
@@ -40,15 +40,18 @@ export default{
   },
   mounted:function(){
     console.log("parent mounted run");
-    this.$nextTick(function(){
-      document.querySelector(".home-main").scrollTop = this.scroll;
-    })
+    
+      
+    
 
   },
   methods:{
     ...mapMutations(["RECORD_SCROLL"]),
     handler:function(){
       console.log("子组件通知父组件");
+    },
+    resetScrollBar:function(){
+      document.querySelector(".home-main").scrollTop = this.scroll;
     }
   },
   computed:{

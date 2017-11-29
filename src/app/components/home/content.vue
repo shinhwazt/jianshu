@@ -88,6 +88,9 @@ export default{
     _this.scrollHandler();
     axios.get("http://localhost:8888/articles").then(function(data){
       _this.articles = data.data;
+      _this.$nextTick(function(){
+        _this.$emit("resetScrollBar");
+      })
       
     },function(){
 

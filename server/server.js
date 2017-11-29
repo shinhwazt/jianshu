@@ -9,18 +9,21 @@ var hotTopics = require("./mock/hotTopics.js")
 var topics = require("./mock/topics.js")
 
 
-app.use(express.static('../src/app'));
-app.use(express.static('../dist'));
-app.use(express.static('../../jianshu'));
+app.use(express.static('./src/app'));
+app.use(express.static('./dist'));
+app.use(express.static('./../jianshu'));
 
 app.get('/', function (req, res) {
-  res.sendFile('index.html');
+  res.sendFile('index.html',{root:'./src/app'});
 });
 app.get('/topic', function (req, res) {
   res.send(topics.topics);
 });
 app.get('/articles', function (req, res) {
   res.send(articles.articles);
+});
+app.get('/carousel', function (req, res) {
+  res.send(carousel.carousels);
 });
 
 

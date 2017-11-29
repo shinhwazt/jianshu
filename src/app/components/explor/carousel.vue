@@ -24,7 +24,7 @@
 .carousel-ticket li.active-ticket{background-color: white}
 </style>
 <script>
-import carousels from "../../../../mock/carousel.js"
+import axios from "axios"
 export default{
   data(){
     return {
@@ -36,7 +36,27 @@ export default{
       sport:false
     }
   },
+  created:function(){
+    var _this = this;
+    axios.get("http://localhost:8888/carousel").then(function(data){
+      _this.carousels = data.data;
+      _this.carouselsUse = JSON.parse(JSON.stringify(data.data));
+      _this.carouselsUse.push(_this.carousels[0]);
+      _this.carouselsUse.unshift(_this.carousels[_this.carousels.length-1]);
+      
+
+      _this.$nextTick(function(){
+        _this.carouselHandler();
+        _this.timer = setInterval(_this.carouselHandler,5000);
+        _this.bindTouchHandler();
+      })
+      
+    },function(){
+
+    });
+  },
   mounted:function(){
+    /*
 
       this.carousels = carousels.carousels;
       this.carouselsUse = JSON.parse(JSON.stringify(carousels.carousels));
@@ -44,7 +64,7 @@ export default{
       this.carouselsUse.unshift(this.carousels[this.carousels.length-1]);
       this.carouselHandler();
       this.timer = setInterval(this.carouselHandler,5000);
-      this.bindTouchHandler();
+      this.bindTouchHandler();*/
 
 
   },
@@ -116,7 +136,7 @@ export default{
           setTimeout(function(){
             ul.style.transition = "none";
             ul.style.transform = "translate("+(-750*max)+"px)";
-          },50);
+          },200);
 
 
           return;
@@ -138,7 +158,7 @@ export default{
           setTimeout(function(){
             ul.style.transition = "none";
             ul.style.transform = "translate(-750px)";
-          },50);
+          },200);
 
 
           return;
