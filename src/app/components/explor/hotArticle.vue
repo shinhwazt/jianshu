@@ -93,7 +93,8 @@ width: 150px;box-sizing: border-box;border-left: 3px solid #e68c81;padding-left:
 font-size: 29px;border-radius: 5px}
 </style>
 <script>
-import articles from "../../../../mock/articles.js"
+import axios from "axios"
+import { mapMutations } from 'vuex'
 export default{
   data(){
     return{
@@ -103,12 +104,21 @@ export default{
     }
   },
   created:function(){
-    this.hotArticles = articles.articles
+    this.initData();
   },
   mounted:function(){
 
   },
   methods:{
+    initData:function(){
+      var _this = this;
+      axios.get("http://localhost:8888/articles").then(function(data){
+        _this.hotArticles = data.data;
+        _this.$nextTick(function(){
+          document.body.scrollTop = _this.scroll;
+        })
+      },function(){});
+    },
     removeSingleArticle:function(){
       var currentId = this.currentArticle;
       for(var i=0,il=this.hotArticles.length;i<il;i++){
@@ -153,6 +163,12 @@ export default{
         top:obj.top,
         left:obj.left
       }
+    },
+    
+  },
+  computed:{
+    scroll(){
+      return this.$store.state.explorScroll
     }
   }
 

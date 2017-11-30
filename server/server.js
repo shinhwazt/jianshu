@@ -1,4 +1,5 @@
 var express = require('express');
+var path = require("path");
 var app = express();
 var config = require("./config.json");
 //data
@@ -9,12 +10,13 @@ var hotTopics = require("./mock/hotTopics.js")
 var topics = require("./mock/topics.js")
 
 
-app.use(express.static('./src/app'));
-app.use(express.static('./dist'));
-app.use(express.static('./../jianshu'));
+var root = path.join(__dirname,"../")
+console.log(root);
+
+app.use(express.static(root));
 
 app.get('/', function (req, res) {
-  res.sendFile('index.html',{root:'./src/app'});
+  res.sendFile('index.html',{root:"./src/app"});
 });
 app.get('/topic', function (req, res) {
   res.send(topics.topics);
@@ -24,6 +26,28 @@ app.get('/articles', function (req, res) {
 });
 app.get('/carousel', function (req, res) {
   res.send(carousel.carousels);
+});
+app.get('/hotTopic', function (req, res) {
+  var all = JSON.stringify(hotTopics.hotTopics);
+  var data = JSON.parse(all);
+  var showTopics = [];
+  while (true) {
+    if(data.length==0){
+      data = JSON.parse(all);
+    }
+    var num = getRamdom(data.length);
+    showTopics.push(data.splice(num,1)[0]);
+    if(showTopics.length==8){
+      break;
+    }
+  }
+  function getRamdom(max){
+    return Math.floor(Math.random()*max)
+  }
+  res.send(showTopics);
+});
+app.get('/category', function (req, res) {
+  res.send(categorys.categorys);
 });
 
 

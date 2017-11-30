@@ -12,8 +12,8 @@
 .explor-type{height:160px;width:690px;margin:1px auto;overflow-x: auto;overflow-y: hidden}
 .explor-type::-webkit-scrollbar{display: none}
 .type-content{height:160px;font-size: 0;white-space: nowrap;}
-.type-content li{width:200px;height: 90px;margin:35px 15px 35px 0;display: inline-block;border-radius: 5px;text-align: left;line-height: 90px;font-size: 35px;
-box-sizing: border-box;padding-left: 30px;font-weight: bold;
+.type-content li{width:auto;height: 90px;margin:35px 15px 35px 0;display: inline-block;border-radius: 5px;text-align: left;line-height: 90px;font-size: 35px;
+box-sizing: border-box;padding-left: 30px;padding-right: 30px;font-weight: bold;
     color: white;}
 .single-category1{background-color:#469dfc;}
 .single-category2{background-color:#ee8a72;}
@@ -30,15 +30,20 @@ box-sizing: border-box;padding-left: 30px;font-weight: bold;
 .single-category11{background-color:#c69efe;}
 </style>
 <script>
-import categorys from "../../../../mock/categorys.js"
+import axios from "axios"
 export default{
   data(){
     return {
       categorys:[]
     }
   },
-  mounted:function(){
-    this.categorys = categorys.categorys
-  }
+  created:function(){
+    var _this = this;
+    axios.get("http://localhost:8888/category").then(function(data){
+      _this.categorys = data.data;
+
+    },function(){});
+  },
+
 }
 </script>

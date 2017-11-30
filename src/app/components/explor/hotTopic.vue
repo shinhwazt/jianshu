@@ -10,9 +10,6 @@
     <div class="hot-topic-content">
       <ul>
         <li v-for="showTopic in showTopics">{{showTopic}}</li>
-
-
-
       </ul>
     </div>
   </div>
@@ -31,40 +28,23 @@ width: 150px;box-sizing: border-box;border-left: 3px solid #e68c81;padding-left:
 display: inline-block;font-size: 30px;color:#e68c81;border-radius: 8px;margin:18px 20px 10px 0}
 </style>
 <script>
-import hotTopics from "../../../../mock/hotTopics.js"
+import axios from "axios"
 export default{
   data(){
     return{
-      hotTopics:[],
       showTopics:[],
-      allTopics:[],
     }
   },
   mounted:function(){
-    this.hotTopics = JSON.parse(JSON.stringify(hotTopics.hotTopics));
-    this.allTopics = JSON.stringify(this.hotTopics);
-
     this.getRandomHotTopic();
   },
   methods:{
-
     getRandomHotTopic:function(){
-      var showTopics = [];
-      while (true) {
-        if(this.hotTopics.length==0){
-          this.hotTopics = JSON.parse(this.allTopics);
-        }
-        var num = getRamdom(this.hotTopics.length);
-        showTopics.push(this.hotTopics.splice(num,1)[0]);
-        if(showTopics.length==8){
-          this.showTopics = showTopics;
-          break;
-        }
-      }
-
-      function getRamdom(max){
-        return Math.floor(Math.random()*max)
-      }
+      var _this = this;
+      axios.get("http://localhost:8888/hotTopic").then(function(data){
+        _this.showTopics = data.data;
+      },function(){
+      })
     },
     randomHandler:function(){
       var btn = this.$refs.refresh;

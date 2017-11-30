@@ -31,15 +31,11 @@ export default{
     next();
   },
   mounted:function(){
-    document.body.scrollTop = this.scroll;
+    //document.body.scrollTop = this.scroll;
   },
   methods:{
     ...mapMutations(["RECORD_SCROLL"]),
-  },
-  computed:{
-    scroll(){
-      return this.$store.state.explorScroll
-    }
   }
+
 }
 </script>
