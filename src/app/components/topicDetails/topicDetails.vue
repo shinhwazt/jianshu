@@ -8,9 +8,9 @@
 
         </div>
         <div class="topic-author-avator">
-          <img src="http://upload.jianshu.io/users/upload_avatars/5659613/b4ed1981-d238-4491-99ae-d5b063c75d6a.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64">
+          <img :src="topicDetails.avator">
         </div>
-        <div class="topic-author-name">骑在银龙背上</div>
+        <div class="topic-author-name">{{topicDetails.name}}</div>
       </div>
       <div class="toppic-details-nav">
 
@@ -60,11 +60,26 @@ position:relative;}
 }
 </style>
 <script>
+import axios from "axios"
+import { mapMutations } from 'vuex'
 export default{
   data(){
     return {
-      path:""
+      topicDetails:{
+        name:"",
+        avator:""
+      }
     }
+  },
+  created:function(){
+    var _this = this;
+    var id = this.$route.params.id;
+    axios.get("http://localhost:8888/topicDetails/"+id).then(function(data){
+      _this.topicDetails = data.data.info;
+      _this.LOAD_TOPIC_DETAILS({name:"public", data:data.data.tags.public});
+      _this.LOAD_TOPIC_DETAILS({name:"comment", data:data.data.tags.comment});
+      _this.LOAD_TOPIC_DETAILS({name:"hot", data:data.data.tags.hot});
+    },function(){})
   },
   mounted:function(){
     console.log(this.$route.params.id)
@@ -73,6 +88,7 @@ export default{
       var topicDetailsReg = /^#\/topicDetails/;
       if(topicDetailsReg.test(hash)){
         window.location.hash = "#/home";
+
       }
     });
     var hash = window.location.hash.slice(1).split("/");
@@ -89,6 +105,7 @@ export default{
     next();
   },
   methods:{
+    ...mapMutations(["LOAD_TOPIC_DETAILS"]),
     backHandler:function(){
       window.location.hash = "#/home";
     },

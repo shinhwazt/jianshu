@@ -1,106 +1,27 @@
 <template>
   <div class="new-hot-content">
     <ul>
-      <li>
+      <li v-for="item in $store.state.topicHot">
         <div class="hot-details">
           <div class="hot-details-text">
-            <div class="hot-details-text-time">15小时前</div>
-            <div class="hot-details-text-title">这部电影用独特的视角讲述了每个人的初恋</div>
-            <div class="hot-details-text-tags">560阅读·11评论·11喜欢</div>
+            <div class="hot-details-text-time">{{item.time}}</div>
+            <div class="hot-details-text-title">{{item.text}}</div>
+            <div class="hot-details-text-tags">{{item.read}}阅读·{{item.comment}}评论·{{item.love}}喜欢</div>
           </div>
           <div class="hot-details-cover">
-            <img src="http://upload.jianshu.io/collections/images/283250/%E6%BC%AB%E7%94%BB%E4%B8%93%E9%A2%98.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/180/h/180">
+            <img :src="item.url">
           </div>
         </div>
       </li>
-      <li>
-        <div class="hot-details">
-          <div class="hot-details-text">
-            <div class="hot-details-text-time">15小时前</div>
-            <div class="hot-details-text-title">这部电影用独特的视角讲述了每个人的初恋</div>
-            <div class="hot-details-text-tags">560阅读·11评论·11喜欢</div>
-          </div>
-          <div class="hot-details-cover">
-            <img src="http://upload.jianshu.io/collections/images/61/0__15815600_401_00.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64">
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="hot-details">
-          <div class="hot-details-text">
-            <div class="hot-details-text-time">15小时前</div>
-            <div class="hot-details-text-title">这部电影用独特的视角讲述了每个人的初恋</div>
-            <div class="hot-details-text-tags">560阅读·11评论·11喜欢</div>
-          </div>
-          <div class="hot-details-cover">
-            <img src="http://upload.jianshu.io/collections/images/61/0__15815600_401_00.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64">
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="hot-details">
-          <div class="hot-details-text">
-            <div class="hot-details-text-time">15小时前</div>
-            <div class="hot-details-text-title">这部电影用独特的视角讲述了每个人的初恋</div>
-            <div class="hot-details-text-tags">560阅读·11评论·11喜欢</div>
-          </div>
-          <div class="hot-details-cover">
-            <img src="http://upload.jianshu.io/collections/images/61/0__15815600_401_00.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64">
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="hot-details">
-          <div class="hot-details-text">
-            <div class="hot-details-text-time">15小时前</div>
-            <div class="hot-details-text-title">这部电影用独特的视角讲述了每个人的初恋</div>
-            <div class="hot-details-text-tags">560阅读·11评论·11喜欢</div>
-          </div>
-          <div class="hot-details-cover">
-            <img src="http://upload.jianshu.io/collections/images/61/0__15815600_401_00.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64">
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="hot-details">
-          <div class="hot-details-text">
-            <div class="hot-details-text-time">15小时前</div>
-            <div class="hot-details-text-title">这部电影用独特的视角讲述了每个人的初恋</div>
-            <div class="hot-details-text-tags">560阅读·11评论·11喜欢</div>
-          </div>
-          <div class="hot-details-cover">
-            <img src="http://upload.jianshu.io/collections/images/61/0__15815600_401_00.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64">
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="hot-details">
-          <div class="hot-details-text">
-            <div class="hot-details-text-time">15小时前</div>
-            <div class="hot-details-text-title">这部电影用独特的视角讲述了每个人的初恋</div>
-            <div class="hot-details-text-tags">560阅读·11评论·11喜欢</div>
-          </div>
-          <div class="hot-details-cover">
-            <img src="http://upload.jianshu.io/collections/images/61/0__15815600_401_00.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64">
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="hot-details">
-          <div class="hot-details-text">
-            <div class="hot-details-text-time">15小时前</div>
-            <div class="hot-details-text-title">这部电影用独特的视角讲述了每个人的初恋</div>
-            <div class="hot-details-text-tags">560阅读·11评论·11喜欢</div>
-          </div>
-          <div class="hot-details-cover">
-            <img src="http://upload.jianshu.io/collections/images/61/0__15815600_401_00.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64">
-          </div>
-        </div>
-      </li>
+
     </ul>
   </div>
 </template>
-<script></script>
+<script>
+export default{
+  
+}
+</script>
 <style>
 .new-hot-content{width: 750px;position: fixed;margin-left: -375px;left: 50%;bottom: 0;top:180px;overflow-y: auto;}
 .new-hot-content ul{height: auto;width: 750px}

@@ -1,4 +1,4 @@
-import {RECORD_SCROLL} from "./mutation-type"
+import {RECORD_SCROLL,LOAD_TOPIC_DETAILS} from "./mutation-type"
 export default{
   /*
   *记录首页的滚动条位置
@@ -12,6 +12,16 @@ export default{
       state.explorScroll = height;
     }else if(name=="person"){
       state.personScroll = height;
+    }
+  },
+  [LOAD_TOPIC_DETAILS](state,{name,data}){
+
+    if(name=="public"){
+      state.topicPublic = data;
+    }else if(name=="comment"){
+      state.topicComment = data;
+    }else if(name=="hot"){
+      state.topicHot = data;
     }
   }
 }

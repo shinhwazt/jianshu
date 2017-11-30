@@ -9,6 +9,10 @@ const state = {
   homeScroll:0,
   explorScroll:0,
   personScroll:0,
+  topicComment:{},
+  topicHot:{},
+  topicPublic:{}
+
 
 }
 

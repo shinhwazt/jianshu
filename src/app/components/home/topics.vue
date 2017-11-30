@@ -3,8 +3,8 @@
     <div class="home-topics">
       <ul>
         <li v-for="topic in topics">
-          <router-link to="/topicDetails/111">
-            <img :src="topic">
+          <router-link :to="'/topicDetails/'+topic.id">
+            <img :src="topic.url">
             <span class="topic-icon"></span>
           </router-link>
         </li>

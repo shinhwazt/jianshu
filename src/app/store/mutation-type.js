@@ -1,1 +1,2 @@
 export const RECORD_SCROLL = 'RECORD_SCROLL';
+export const LOAD_TOPIC_DETAILS = 'LOAD_TOPIC_DETAILS';

@@ -8,6 +8,7 @@ var carousel = require("./mock/carousel.js")
 var categorys = require("./mock/categorys.js")
 var hotTopics = require("./mock/hotTopics.js")
 var topics = require("./mock/topics.js")
+var topicDetails = require("./mock/topicTags.js")
 
 
 var root = path.join(__dirname,"../")
@@ -48,6 +49,24 @@ app.get('/hotTopic', function (req, res) {
 });
 app.get('/category', function (req, res) {
   res.send(categorys.categorys);
+});
+app.get('/topicDetails/:id', function (req, res) {
+
+  var id = req.params.id;
+  console.log(id);
+  var description = {}
+  for(var i=0,il=topics.topics.length;i<il;i++){
+    var current = topics.topics[i];
+    console.log("current.id:"+current.id)
+    if(current.id==id){
+      description.name = current.name;
+      description.avator = current.url;
+      break;
+    }
+  }
+  res.send({info:description,tags:topicDetails});
+
+
 });
 
 
