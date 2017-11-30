@@ -32,6 +32,9 @@ export default{
   },
   mounted:function(){
     //document.body.scrollTop = this.scroll;
+    window.addEventListener("scroll",function(){
+      console.log(document.body.scrollTop)
+    })
   },
   methods:{
     ...mapMutations(["RECORD_SCROLL"]),

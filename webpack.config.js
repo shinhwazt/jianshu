@@ -46,5 +46,5 @@ module.exports = {
 
       new ExtractTextPlugin("app.css"),
   ],
-  watch: true
+  //watch: true
 }
