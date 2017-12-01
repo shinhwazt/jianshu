@@ -112,7 +112,7 @@ export default{
   methods:{
     initData:function(){
       var _this = this;
-      axios.get("http://localhost:8888/articles").then(function(data){
+      axios.get("http://localhost:8888/articles/1").then(function(data){
         _this.hotArticles = data.data;
         _this.$nextTick(function(){
           document.body.scrollTop = _this.scroll;
@@ -164,7 +164,7 @@ export default{
         left:obj.left
       }
     },
-    
+
   },
   computed:{
     scroll(){

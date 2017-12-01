@@ -32,16 +32,21 @@
               <div class="article-tags-number">{{article.comment}}评论·{{article.love}}喜欢</div>
             </div>
           </div>
-
         </li>
-
       </ul>
+      <div class="loading" v-show="loading">
+        <img src="../../../../images/loading.gif">
+        <span class="loading-text">加载更多</span>
+      </div>
     </div>
     <div class="handlerPanel" ref="panel" v-show="panelShow" @click="removeSingleArticle">不感兴趣</div>
   </div>
 </div>
 </template>
 <style>
+.loading{height: 50px;width: 750px;text-align: center;overflow: hidden;}
+.loading img{height: 30px;width: 30px;float: left;margin-top: 10px;display: inline-block;}
+.loading-text{height: 50px;width: auto;line-height: 50px;text-align: center;float: left;display: inline-block;}
 .handlerPanel{height:70px;width:200px;text-align: center;line-height: 70px;box-shadow: 1px 1px 15px 1px #ccc;position: fixed;top:300px;left:300px;background-color: white;z-index: 15;
 font-size: 29px;border-radius: 5px}
 .divider{margin:0 10px}
@@ -76,7 +81,9 @@ export default{
     return {
       articles:[],
       panelShow:false,
-      currentArticle:0
+      currentArticle:0,
+      currentPage:1,
+      loading:false,
     }
   },
   beforeCreate:function(){
@@ -86,21 +93,24 @@ export default{
     console.log("created周期执行");
     var _this = this;
     _this.scrollHandler();
-    axios.get("http://localhost:8888/articles").then(function(data){
-      _this.articles = data.data;
-      _this.$nextTick(function(){
-        _this.$emit("resetScrollBar");
-      })
-      
-    },function(){
-
-    });
+    _this.initData();
   },
   beforeMount:function(){
     console.log("beforeMount周期执行");
   },
   mounted:function(){
+    var _this = this;
     console.log("mounted周期执行");
+    var homeMain = document.querySelector(".home-main");
+    homeMain.addEventListener("scroll",function(e){
+      var scrollTop = homeMain.scrollTop;
+      var domHeight = homeMain.getBoundingClientRect().height;
+      var scrollHeight = homeMain.scrollHeight;
+      console.log(scrollTop);
+      if(scrollHeight==(scrollTop+domHeight)){
+        _this.loadMore();
+      }
+    })
   },
   beforeUpdate:function(){
     console.log("beforeUpdate周期执行");
@@ -112,6 +122,35 @@ export default{
     vTopic:vTopic
   },
   methods:{
+    initData:function(){
+      var _this = this;
+      axios.get("http://localhost:8888/articles/"+this.currentPage).then(function(data){
+        _this.articles = data.data;
+        _this.$nextTick(function(){
+          _this.$emit("resetScrollBar");
+        })
+
+      },function(){
+
+      });
+    },
+    loadMore:function(){
+        var _this = this;
+      if(_this.loading){
+        return;
+      }
+
+      _this.currentPage++;
+      _this.loading = true;
+      axios.get("http://localhost:8888/articles/"+this.currentPage).then(function(data){
+        for(var i=0,il=data.data.length;i<il;i++){
+          var current = data.data[i];
+          _this.articles.push(current);
+        }
+
+        _this.loading = false;
+      },function(){});
+    },
     scrollHandler:function(){
       var _this = this;
       window.addEventListener("touchmove",function(){

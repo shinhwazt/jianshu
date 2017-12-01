@@ -40,10 +40,13 @@ export default{
   },
   mounted:function(){
     console.log("parent mounted run");
-    
-      
-    
 
+  },
+  activated:function(){
+    console.log("1")
+  },
+  deactivated:function(){
+  console.log("2")
   },
   methods:{
     ...mapMutations(["RECORD_SCROLL"]),

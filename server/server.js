@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require("path");
 var app = express();
+var history = require('connect-history-api-fallback');
 var config = require("./config.json");
 //data
 var articles = require("./mock/articles.js")
@@ -15,6 +16,9 @@ var root = path.join(__dirname,"../")
 console.log(root);
 
 app.use(express.static(root));
+//app.use(history());
+
+
 
 app.get('/', function (req, res) {
   res.sendFile('index.html',{root:"./src/app"});
@@ -22,7 +26,7 @@ app.get('/', function (req, res) {
 app.get('/topic', function (req, res) {
   res.send(topics.topics);
 });
-app.get('/articles', function (req, res) {
+app.get('/articles/:current', function (req, res) {
   res.send(articles.articles);
 });
 app.get('/carousel', function (req, res) {
@@ -72,7 +76,9 @@ app.get('/topicDetails/:id', function (req, res) {
 
 
 
-
+app.use(function(req, res, next) {
+  res.sendFile('index.html',{root:"./src/app"});
+});
 
 app.listen(config.port, function () {
   console.log('server run port is '+config.port);

@@ -68,10 +68,12 @@ export default{
       topicDetails:{
         name:"",
         avator:""
-      }
+      },
+      hashRoute:"",
     }
   },
   created:function(){
+
     var _this = this;
     var id = this.$route.params.id;
     axios.get("http://localhost:8888/topicDetails/"+id).then(function(data){
@@ -82,16 +84,16 @@ export default{
     },function(){})
   },
   mounted:function(){
+    var _this = this;
     console.log(this.$route.params.id)
     window.addEventListener("popstate",function(e){
-      var hash = window.location.hash;
-      var topicDetailsReg = /^#\/topicDetails/;
+      var hash = window.location.pathname;
+      var topicDetailsReg = /^\/topicDetails/;
       if(topicDetailsReg.test(hash)){
-        window.location.hash = "#/home";
-
+        _this.$router.push("/home");
       }
     });
-    var hash = window.location.hash.slice(1).split("/");
+    var hash = window.location.pathname.slice(1).split("/");
     var final = hash[hash.length-1];
     this.scrollActiveLine(final);
   },
@@ -107,7 +109,8 @@ export default{
   methods:{
     ...mapMutations(["LOAD_TOPIC_DETAILS"]),
     backHandler:function(){
-      window.location.hash = "#/home";
+      //window.location.hash = "#/home";
+      this.$router.push("/home")
     },
     scrollActiveLine:function(hash){
       var dom = this.$refs.activeLine;
