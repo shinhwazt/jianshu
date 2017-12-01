@@ -22,11 +22,11 @@
 <div style="text-align:center">
   <img src="images/app-message.png"/>
 </div>
-几个底部导航按钮的头部布局相同，只有左侧文字不同，右侧图标和路由不同，所以将其提取为公共header组件（子组件）:
+头部布局相同，只有左侧文字不同，右侧图标和路由不同，所以将其提取为公共header组件（子组件）:
 
 ##  header组件（子组件）代码
 
-```
+```html
 <template>
   <div class="home-header" @click="test">
     <div class="home-header-left">{{headerText}}</div>
@@ -49,7 +49,7 @@
   </div>
 </template>
 ```
-```
+```css
 <style>
 .home-header{height:90px;width:750px;box-sizing: border-box;padding:0 30px;font-size: 35px;position: fixed;top:0;left:50%;margin-left: -375px;background-color: white;z-index: 10;
 border-bottom: 1px solid #ccc;color: #2c2c2c;font-weight: 600}
@@ -61,7 +61,7 @@ border-bottom: 1px solid #ccc;color: #2c2c2c;font-weight: 600}
 .home-search{width:750px;background-color: red;position: fixed;top:0;left: 0;bottom: 90px;}
 </style>
 ```
-```
+```js
 <script>
 export default{
   props:["headerText","headerImg","headerUrl"],
@@ -77,7 +77,7 @@ export default{
 
 ## home组件（父组件代码）
 
-```
+```html
 <template>
   <div>
     <homeHeader :headerText="headText" :headerUrl="handlerUrl" :headerImg="handlerImg" @parentfn="handler"></homeHeader>
@@ -85,7 +85,7 @@ export default{
   </div>
 </template>
 ```
-```
+```js
 <script>
 import homeHeader from "../common/header.vue"
 import homeContent from "./content.vue"
@@ -126,9 +126,9 @@ export default{
 }
 </script>
 ```
-定义子组件的过程就好像函数的封装，子组件就好像是我们定义一个有参数的函数，在实际使用时传入特定的值就能产生我们想要的结果。<br />
+定义子组件的过程就好像函数的封装，子组件就好像是我们定义一个有参数的函数，在实际使用时传入特定的参数值就能产生我们想要的结果，而子组件向父组件通信又类似一个callback。<br />
 
-子组件中动态内容需要在js中通过props来声明,然后在html模板中正常使用即可(通过{{}}或者:prop="")<br />
+子组件中的动态内容需要在js中通过props来声明,然后在html模板中正常使用即可(通过{{}}或者:prop="")<br />
 
 ## 父组件向子组件通信
 
@@ -138,7 +138,7 @@ export default{
 
 1.在js中通过props来定义属性，如headerText、headerImg、headerUrl
 
-```
+```js
 props:["headerText","headerImg","headerUrl"]
 ```
 
@@ -149,13 +149,13 @@ props:["headerText","headerImg","headerUrl"]
 
 1.在父组件中导入该子组件
 
-```
+```js
 import homeHeader from "../common/header.vue"
 ```
 
 2.注册该子组件
 
-```
+```js
 components:{
   homeHeader:homeHeader,
   homeContent:homeContent
@@ -164,7 +164,7 @@ components:{
 
 3.在html模板中使用该子组件并传入相应的值
 
-```
+```html
 <homeHeader :headerText="headText" :headerUrl="handlerUrl" :headerImg="handlerImg" @parentfn="handler"></homeHeader>
 ```
 homeHeader组件中的:headerText、:headerUrl、:headerImg  要和子组件中的props里面定义的值保持一致(headerText和header-text是等价的)
@@ -175,19 +175,19 @@ homeHeader组件中的:headerText、:headerUrl、:headerImg  要和子组件中
 
 ### 在子组件中
 
-1.在子组件js中定义事件处理函数，在事件处理函数中通过$emit来触发在父组件中为子组件绑定的自定义事件
+1.在子组件js中定义一个处理函数，在处理函数中通过$emit来触发在父组件中为子组件绑定的自定义事件
 
-```
+```js
 methods:{
   test:function(){
-    this.$emit('parentfn');
-  }
+    this.$emit('parentfn');
+  }
 }
 ```
 
-2.在子组件html模板中绑定事件
+2.在子组件中触发定义的台test函数（本例中以事件方式触发，在html模板中绑定事件）
 
-```
+```html
 <div class="home-header" @click="test"></div>
 ```
 
@@ -195,7 +195,7 @@ methods:{
 
 1.在父组件js中定义一个处理函数
 
-```
+```js
 handler:function(){
   console.log("子组件通知父组件");
 }
@@ -203,7 +203,7 @@ handler:function(){
 
 2.在注册的子组件实例中通过v-on(@)绑定一个自定义事件，该自定义事件的处理函数为步骤1定义的处理函数
 
-```
+```html
 <homeHeader :headerText="headText" :handlerUrl="handlerUrl" :handlerImg="handlerImg" @parentfn="handler"></homeHeader>
 ```
 父组件中的@parentfn 和 子组件中的this.$emit("parentfn")函数名要保持一致
