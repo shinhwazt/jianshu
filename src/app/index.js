@@ -32,8 +32,5 @@ new Vue({
   methods:{
 
   },
-  created:function(){
-
-  }
-
+  
 })
