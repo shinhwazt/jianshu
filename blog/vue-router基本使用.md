@@ -3,11 +3,21 @@
 vue-router需要两个基本的组件\<router-link\>和\<router-view\>
 
 基本使用步骤为：
+
+
 1.导入基本组件(import componentX from "xx/xx.vue")
+
+
 2.制定路由匹配规则({path:"/xx",component:componentX})
+
+
 3.实例化路由(new VueRouter())
+
+
 4.绑定到vue实例(new Vue({router:routerX}))
 
+
+## router.js
 ```js
 import VueRouter from "vue-router"
 //导入基本组件
@@ -80,10 +90,12 @@ const router = new VueRouter({
 });
 export default router;
 ```
+## index.js
 //绑定到vue实例
 ```js
 import Vue from "vue"
 import VueRouter from "vue-router"
+import router frm "router.js"
 Vue.use(VueRouter)
 new Vue({
   el:"#app",
