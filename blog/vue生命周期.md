@@ -24,7 +24,7 @@ beforeDestroy,destroyed在组件销毁时执行：beforeDestroy->destroyed
 组件被加载时被调用的生命周期为beforeCreate,created,beforeMount,mounted
 
 假如在一个组件中包含两个组件(componentA,componentB)，详细代码如下：
-```
+```html
 <template>
   <div>
     <componentA></componentA>
@@ -43,7 +43,7 @@ beforeDestroy,destroyed在组件销毁时执行：beforeDestroy->destroyed
 ## 组件被keep-alive修饰
 
 当组件被keep-alive修饰时，例如:
-```
+```html
 <keep-alive>
  <router-view></router-view>
 </keep-alive>
