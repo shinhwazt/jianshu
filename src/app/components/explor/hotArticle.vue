@@ -166,6 +166,10 @@ export default{
     },
 
   },
+  
+  activated:function(){
+    document.body.scrollTop = this.scroll;
+  },
   computed:{
     scroll(){
       return this.$store.state.explorScroll

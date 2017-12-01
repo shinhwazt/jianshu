@@ -35,6 +35,9 @@ export default{
       return this.$store.state.personScroll
     }
   },
+  activated:function(){
+    document.body.scrollTop = this.scroll;
+  },
   components:{
     personHeader:personHeader,
     personContent:personContent

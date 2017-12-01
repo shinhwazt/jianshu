@@ -45,8 +45,8 @@
 </template>
 <style>
 .loading{height: 50px;width: 750px;text-align: center;overflow: hidden;}
-.loading img{height: 30px;width: 30px;float: left;margin-top: 10px;display: inline-block;}
-.loading-text{height: 50px;width: auto;line-height: 50px;text-align: center;float: left;display: inline-block;}
+.loading img{height: 30px;width: 30px;margin-top: 10px;display: inline-block;}
+.loading-text{height: 50px;width: auto;line-height: 50px;text-align: center;display: inline-block;}
 .handlerPanel{height:70px;width:200px;text-align: center;line-height: 70px;box-shadow: 1px 1px 15px 1px #ccc;position: fixed;top:300px;left:300px;background-color: white;z-index: 15;
 font-size: 29px;border-radius: 5px}
 .divider{margin:0 10px}
@@ -108,6 +108,7 @@ export default{
       var scrollHeight = homeMain.scrollHeight;
       console.log(scrollTop);
       if(scrollHeight==(scrollTop+domHeight)){
+        
         _this.loadMore();
       }
     })
@@ -117,6 +118,12 @@ export default{
   },
   updated:function(){
     console.log("updated周期执行");
+  },
+  beforeDestroy:function(){
+    console.log("beforeDestroy周期执行");
+  },
+  destroyed:function(){
+    console.log("destroyed周期执行");
   },
   components:{
     vTopic:vTopic

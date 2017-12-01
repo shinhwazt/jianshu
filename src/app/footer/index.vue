@@ -28,7 +28,7 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/person">
+        <router-link to="/profile">
           <span class="icon icon-user"></span>
           <span class="text">{{person}}</span>
         </router-link>

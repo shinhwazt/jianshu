@@ -42,11 +42,19 @@ export default{
     console.log("parent mounted run");
 
   },
+  beforeDestroy:function(){
+    console.log("parent beforeDestroy run");
+  },
+  destroyed:function(){
+    console.log("parent destroy run");
+
+  },
   activated:function(){
-    console.log("1")
+    console.log("parent activated run");
+    this.resetScrollBar();
   },
   deactivated:function(){
-  console.log("2")
+   console.log("parent deactivated run");
   },
   methods:{
     ...mapMutations(["RECORD_SCROLL"]),

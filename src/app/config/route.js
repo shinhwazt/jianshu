@@ -11,7 +11,7 @@ import search from "../components/common/search.vue"*/
 const home = () => import("../components/home/home.vue")
 const explor = () => import("../components/explor/explor.vue")
 const message = () => import("../components/message/message.vue")
-const person = () => import("../components/person/person.vue")
+const profile = () => import("../components/profile/profile.vue")
 const recommendFollow = () => import("../components/recommendFollow/follow.vue")
 const search = () => import("../components/common/search.vue")
 const topicDetails = () => import("../components/topicDetails/topicDetails.vue")
@@ -60,8 +60,8 @@ const routes = [{
     component: message
   },
   {
-    path: '/person',
-    component: person
+    path: '/profile',
+    component: profile
   },
   {
     path: '/search',
