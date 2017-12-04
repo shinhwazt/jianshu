@@ -1,6 +1,6 @@
 # VueRouter基本使用
 
-vue-router需要两个基本的组件\<router-link\>和\<router-view\>
+vue-router需要两个基本的组件`<router-link>`和`<router-view>`
 
 基本使用步骤为：
 
