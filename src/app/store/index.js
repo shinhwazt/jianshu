@@ -4,16 +4,14 @@ import mutations from "./mutation.js"
 Vue.use(Vuex)
 
 const state = {
-  author:{name:"Shinhwa",age:25},
-  version:"0.0.1",
+  author:"Shinhwa",
+  version:"1.0.0",
   homeScroll:0,
   explorScroll:0,
   personScroll:0,
   topicComment:{},
   topicHot:{},
   topicPublic:{}
-
-
 }
 
 
