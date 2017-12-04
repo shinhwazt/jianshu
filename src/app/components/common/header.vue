@@ -34,7 +34,11 @@ export default{
   props:["headerText","headerImg","headerUrl"],
   methods:{
     test:function(){
+      console.log(this.$store.state.author.name)
       this.$emit('parentfn');
+
+      
+      console.log(this.$store.state.author.name)
     }
   },
   beforeCreate:function(){

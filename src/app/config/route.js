@@ -23,7 +23,11 @@ const topicDetailsHot = () => import("../components/topicDetails/hot.vue")
 
 const routes = [{
     path: "/home",
-    component: home
+    component: home,
+    beforeEnter:(to, from, next)=>{
+      console.log("inner-router-lifecycle-beforeEnter-runing");
+      next();
+    }
   },
   {
     path: '/recommendFollow',
@@ -78,5 +82,19 @@ const router = new VueRouter({
   mode: 'history',
   routes,
 
+
 });
+
+router.beforeEach((to, from, next) => {
+  console.log("global-router-liftcycle-beforeEach:from:"+from.path+" to "+to.path);
+  next();
+
+});
+router.beforeResolve((to, from, next) => {
+  console.log("global-router-liftcycle-beforeResolve:from:"+from.path+" to "+to.path);
+  next();
+})
+router.afterEach((to, from) => {
+  console.log("global-router-liftcycle-afterEach:from:"+from.path+" to "+to.path)
+})
 export default router;

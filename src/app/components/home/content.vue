@@ -108,7 +108,7 @@ export default{
       var scrollHeight = homeMain.scrollHeight;
       //console.log(scrollTop);
       if(scrollHeight==(scrollTop+domHeight)){
-        
+
         _this.loadMore();
       }
     })

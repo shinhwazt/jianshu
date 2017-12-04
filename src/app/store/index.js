@@ -4,7 +4,7 @@ import mutations from "./mutation.js"
 Vue.use(Vuex)
 
 const state = {
-  author:"Shinhwa",
+  author:{name:"Shinhwa",age:25},
   version:"0.0.1",
   homeScroll:0,
   explorScroll:0,
@@ -17,4 +17,7 @@ const state = {
 }
 
 
-export default new Vuex.Store({state,mutations});
+export default new Vuex.Store({
+  state,mutations,
+  strict: true
+});

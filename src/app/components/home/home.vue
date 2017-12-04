@@ -25,8 +25,17 @@ export default{
 
   },
   beforeRouteLeave :function(to,from,next){
+    console.log("components-router-lifecycle-beforeRouteLeave-runing");
     var top = document.querySelector(".home-main").scrollTop;
     this.RECORD_SCROLL({name:"home",height:top});
+    next();
+  },
+  beforeRouteEnter :function(to,from,next){
+    console.log("components-router-lifecycle-beforeRouteEnter-runing");
+    next();
+  },
+  beforeRouteUpdate :function(to,from,next){
+    console.log("components-router-lifecycle-beforeRouteUpdate-runing");
     next();
   },
   beforeCreate:function(){
