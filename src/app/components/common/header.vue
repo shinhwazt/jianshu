@@ -1,6 +1,6 @@
 <template>
   <div class="home-header" @click="test">
-    <div class="home-header-left">{{headerText}}</div>
+    <div class="home-header-left">{{headerText}}{{this.$store.state.author}}{{newAuthor}}</div>
     <div class="home-header-right">
       <router-link :to="'/'+headerUrl">
         <div class="home-heaader-function">
@@ -30,15 +30,23 @@ border-bottom: 1px solid #ccc;color: #2c2c2c;font-weight: 600}
 .home-search{width:750px;background-color: red;position: fixed;top:0;left: 0;bottom: 90px;}
 </style>
 <script>
+import {mapActions,mapGetters} from "vuex"
+
 export default{
   props:["headerText","headerImg","headerUrl"],
   methods:{
+    ...mapActions(["ACTIONS_HANDLER_TEST"]),
+
     test:function(){
-      console.log(this.$store.state.author.name)
+
       this.$emit('parentfn');
 
-      console.log(this.$store.state.author.name)
+      this.ACTIONS_HANDLER_TEST({content:"HAHAHA"})
+
     }
+  },
+  computed:{
+      ...mapGetters(["newAuthor"]),
   },
   beforeCreate:function(){
     console.log("header-lifecycle:beforeCreated");

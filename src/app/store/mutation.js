@@ -27,5 +27,10 @@ export default{
     }else if(name=="hot"){
       state.topicHot = data;
     }
+  },
+
+  ["HANDLER_TEST"](state,{content}){
+    state.author = content;
+
   }
 }
