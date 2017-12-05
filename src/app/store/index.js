@@ -14,7 +14,6 @@ const state = {
   topicPublic:{}
 }
 
-
 export default new Vuex.Store({
   state,mutations,
   strict: true

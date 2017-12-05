@@ -37,33 +37,32 @@ export default{
       console.log(this.$store.state.author.name)
       this.$emit('parentfn');
 
-      
       console.log(this.$store.state.author.name)
     }
   },
   beforeCreate:function(){
-    console.log("lifecycle:beforeCreated");
+    console.log("header-lifecycle:beforeCreated");
   },
   created:function(){
-    console.log("lifecycle:created");
+    console.log("header-lifecycle:created");
   },
   beforeMount:function(){
-    console.log("lifecycle:beforeMounted");
+    console.log("header-lifecycle:beforeMounted");
   },
   mounted:function(){
-    console.log("lifecycle:mounted");
+    console.log("header-lifecycle:mounted");
   },
   beforeUpdate:function(){
-    console.log("lifecycle:beforeUpdate");
+    console.log("header-lifecycle:beforeUpdate");
   },
   updated:function(){
-    console.log("lifecycle:updated");
+    console.log("header-lifecycle:updated");
   },
   beforeDestroy:function(){
-    console.log("lifecycle:beforeDestroy");
+    console.log("header-lifecycle:beforeDestroy");
   },
   destroyed:function(){
-    console.log("lifecycle:destroy");
+    console.log("header-lifecycle:destroy");
   },
 }
 </script>

@@ -1,12 +1,4 @@
 import VueRouter from "vue-router"
-/*
-import home from "../components/home/home.vue"
-import explor from "../components/explor/explor.vue"
-import message from "../components/message/message.vue"
-import person from "../components/person/person.vue"
-import recommendFollow from "../components/recommendFollow/follow.vue"
-import search from "../components/common/search.vue"*/
-
 
 const home = () => import("../components/home/home.vue")
 const explor = () => import("../components/explor/explor.vue")

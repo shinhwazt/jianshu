@@ -42,10 +42,8 @@ export default{
     backHandler:function(){
       this.$router.go(-1);
     }
-
   },
   mounted:function(){
-    console.log("xhr next")
     xhr.get("http://webapi.efftravel.com/api/service/getproductlist?second_value=392").then(function(data){
 
     },function(){

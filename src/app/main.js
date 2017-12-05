@@ -14,23 +14,17 @@ window.onresize = function(){
 }
 
 import Vue from "vue"
-import vFooter from "./footer/index.vue"
-import vHome from "./components/home/home.vue"
-import router from "./config/route.js"
 import VueRouter from "vue-router"
-import store from './store/'
+import vFooter from "./components/common/footer.vue"
+import router from "./config/route.js"
+import store from './store/index.js'
 Vue.use(VueRouter)
 
 new Vue({
   el:"#app",
   components:{
     vFooter:vFooter,
-    vHome:vHome,
   },
   router,
   store,
-  methods:{
-
-  },
-  
 })

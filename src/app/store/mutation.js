@@ -14,8 +14,12 @@ export default{
       state.personScroll = height;
     }
   },
+  /*
+  *加载评论热门最新发布内容
+  *param:name 执行哪个模块
+  *param:data 数据源
+  */
   [LOAD_TOPIC_DETAILS](state,{name,data}){
-
     if(name=="public"){
       state.topicPublic = data;
     }else if(name=="comment"){
